@@ -7,11 +7,11 @@ This repository contains the source code for a bike rental application, develope
 
 Here's a look at the application in action:
 
-![Login](BikeRentalApp/Screenshots/LogIn.png)
-![SignUp](BikeRentalApp/Screenshots/SignUp-bikeRentalApp.png)
-![UserHome](BikeRentalApp/Screenshots/UserHome.png)
-![AdminDashboard](BikeRentalApp/Screenshots/UserManagement-AdminDashboard.png)
-![DATABASE](BikeRentalApp/Screenshots/DB-design.png)
+![Login](/Screenshots/LogIn.png)
+![SignUp](/Screenshots/SignUp-bikeRentalApp.png)
+![UserHome](/Screenshots/UserHome.png)
+![AdminDashboard](/Screenshots/UserManagement-AdminDashboard.png)
+![DATABASE](/Screenshots/DB-design.png)
 
 
 ## Features
@@ -39,7 +39,7 @@ These instructions will help you get a copy of the project up and running on you
 1. Clone the repository to your local machine:
 
 ```bash
-git clone git@github.com:mahboube89/BikeRental-Java.git
+git clone https://github.com/mahboube89/BikeRental.git
 ```
 2. Open the project in your IDE.
 3. Configure the database connection by adjusting the relevant values in src/main/java/org/mr/abschlussprojekt/bikeRental/database/DatabaseManager.java on line 53:

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mr.abschlussprojekt.bikeRental.gui.UserMenuController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="280.0" spacing="20.0" style="-fx-background-color: #f4f4f4;" stylesheets="@styles/style.css" BorderPane.alignment="CENTER">
+         <VBox alignment="CENTER">
+            <children>
+               <ImageView fitHeight="77.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@styles/bycicle.png" />
+               </ImageView>
+               <Label text="RENT &amp; RIDE" textFill="#003366" />
+            </children>
+            <VBox.margin>
+               <Insets top="25.0" />
+            </VBox.margin>
+         </VBox>
+         <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="40.0" prefWidth="150.0" styleClass="user-menu-btn" stylesheets="@styles/style.css" text="Home">
+            <cursor>
+               <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <VBox.margin>
+               <Insets bottom="15.0" top="100.0" />
+            </VBox.margin></Button>
+         <Button fx:id="activityButton" layoutX="82.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleActivityAccount" prefHeight="40.0" prefWidth="150.0" styleClass="user-menu-btn" stylesheets="@styles/style.css" text="Activity">
+            <cursor>
+               <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <VBox.margin>
+               <Insets bottom="15.0" />
+            </VBox.margin></Button>
+         <Button fx:id="profileButton" layoutX="82.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleProfilButton" prefHeight="40.0" prefWidth="150.0" styleClass="user-menu-btn" stylesheets="@styles/style.css" text="My Profil">
+            <cursor>
+               <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <VBox.margin>
+               <Insets bottom="15.0" />
+            </VBox.margin></Button>
+         <Button fx:id="logOutButton" layoutX="82.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="40.0" prefWidth="150.0" styleClass="user-menu-btn" stylesheets="@styles/style.css" text="Log out">
+            <cursor>
+               <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <VBox.margin>
+               <Insets bottom="220.0" />
+            </VBox.margin></Button>
+         <HBox alignment="CENTER" prefHeight="26.0" prefWidth="470.0" spacing="15.0">
+            <Label text="Database Connection" />
+            <Circle fx:id="databaseLight" fill="#b20404" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+            <VBox.margin>
+               <Insets left="20.0" right="20.0" />
+            </VBox.margin>
+         </HBox>
+      </VBox>
+   </left>
+   <center>
+      <fx:include source="user-home-view.fxml" />
+   </center>
+</BorderPane>

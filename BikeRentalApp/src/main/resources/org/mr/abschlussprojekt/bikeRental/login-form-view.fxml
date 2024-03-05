@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="parentContainer" prefHeight="600.0" prefWidth="900.0" styleClass="pane" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mr.abschlussprojekt.bikeRental.gui.LoginFormController">
+   <AnchorPane layoutX="14.0" layoutY="46.0" prefHeight="497.0" prefWidth="391.0">
+      <ImageView fitHeight="90.0" fitWidth="116.0" layoutX="147.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@styles/bycicle.png" />
+      </ImageView>
+      <Label layoutX="142.0" layoutY="156.0" prefHeight="84.0" prefWidth="100.0" text="New here?" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="FreeSans Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="207.0" prefHeight="84.0" prefWidth="276.0" text="Create your Account and unlock a world of biking adventures!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Open Sans Regular" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpButton" layoutX="120.0" layoutY="432.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="145.0" styleClass="btn-background" stylesheets="@styles/style.css" text="Sign Up">
+         <font>
+            <Font name="FreeSans" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#f4f4f4" layoutX="154.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REN &amp; RIDE" />
+   </AnchorPane>
+   <AnchorPane layoutX="516.0" layoutY="45.0" prefHeight="497.0" prefWidth="329.0">
+      <Label layoutX="1.0" layoutY="207.0" prefHeight="84.0" prefWidth="318.0" text="Sign in to Rent&amp;Ride and start your cycling journey today!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Open Sans Regular" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="signInButton" layoutX="92.0" layoutY="426.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="145.0" styleClass="btn-background" stylesheets="@styles/style.css" text="Sign In">
+         <font>
+            <Font name="FreeSans" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="90.0" fitWidth="116.0" layoutX="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@styles/bycicle.png" />
+         </image>
+      </ImageView>
+      <Text fill="#f4f4f4" layoutX="122.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REN &amp; RIDE" />
+   </AnchorPane>
+   <VBox fx:id="signUpBox" alignment="CENTER" layoutX="430.0" prefHeight="600.0" prefWidth="470.0" spacing="20.0" styleClass="login-form-container" stylesheets="@styles/style.css">
+      <Label text="Join Us!" textFill="#18637e">
+         <font>
+            <Font name="FreeSans Bold" size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+         <TextField fx:id="signUpUsername" onKeyReleased="#signUpUsernameValidation" prefHeight="40.0" prefWidth="428.0" promptText="Username" styleClass="login-text-field" stylesheets="@styles/style.css" HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="Open Sans Regular" size="13.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="281.0" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+         <TextField fx:id="signUpEmail" onKeyReleased="#signUpEmailValidation" prefHeight="40.0" prefWidth="428.0" promptText="E-Mail" styleClass="login-text-field" stylesheets="@styles/style.css" HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="Open Sans Regular" size="13.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+         <TextField fx:id="signUpPhone" onKeyReleased="#signUpPhoneValidation" prefHeight="40.0" prefWidth="409.0" promptText="Phone" styleClass="login-text-field" stylesheets="@styles/style.css">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="355.0" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+         <PasswordField fx:id="signUpPassword" onKeyReleased="#signUpPasswordValidation" prefHeight="40.0" prefWidth="358.0" promptText="Password" styleClass="login-text-field" stylesheets="@styles/style.css">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin></PasswordField>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="384.0" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+         <PasswordField fx:id="signUpConfirmPassword" onKeyReleased="#signUpConfirmPasswordValidation" prefHeight="40.0" prefWidth="428.0" promptText="Confirm Password" styleClass="login-text-field" stylesheets="@styles/style.css">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin></PasswordField>
+      </HBox>
+      <Label fx:id="message" prefHeight="45.0" prefWidth="372.0" textFill="#18637e" wrapText="true" />
+      <Button fx:id="registerButton" mnemonicParsing="false" onAction="#registerButtonHandler" prefHeight="40.0" prefWidth="365.0" styleClass="login-form-button" stylesheets="@styles/style.css" text="Sign Up">
+         <font>
+            <Font name="FreeSans" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="25.0" />
+         </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+   </VBox>
+   <VBox fx:id="signInBox" alignment="CENTER" layoutX="430.0" prefHeight="600.0" prefWidth="470.0" spacing="15.0" styleClass="login-form-container" stylesheets="@styles/style.css">
+      <Label text="Welcome Back!" textFill="#18637e">
+         <font>
+            <Font name="FreeSans Bold" size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="50.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="21.0" prefWidth="470.0" spacing="30.0">
+         <children>
+           <!-- <ToggleGroup fx:id="roleToggleGroup">
+            </ToggleGroup>-->
+      
+            <RadioButton fx:id="userRadioButton" selected="true" text="User">
+               <toggleGroup>
+                  <ToggleGroup fx:id="roleToggleGroup" />
+               </toggleGroup>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="adminRadioButton" text="Admin" toggleGroup="$roleToggleGroup">
+               <font>
+                  <Font size="14.0" />
+               </font></RadioButton>
+         </children>
+      </HBox>
+
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <TextField fx:id="signInUsername" focusTraversable="false" onKeyReleased="#signInFieldsValidation" prefHeight="38.0" prefWidth="331.0" promptText="Username" styleClass="login-text-field" stylesheets="@styles/style.css" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </TextField>
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" top="30.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="355.0" prefHeight="40.0" prefWidth="315.0" styleClass="field-box" stylesheets="@styles/style.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+         <PasswordField fx:id="signInPassword" onKeyReleased="#signInFieldsValidation" prefHeight="75.0" prefWidth="428.0" promptText="Password" styleClass="login-text-field" stylesheets="@styles/style.css" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </PasswordField>
+      </HBox>
+      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonHandler" prefHeight="40.0" prefWidth="365.0" styleClass="login-form-button" stylesheets="@styles/style.css" text="Sign In">
+         <font>
+            <Font name="Open Sans Regular" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="70.0" />
+         </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="340.0" spacing="5.0">
+         <VBox.margin>
+            <Insets bottom="20.0" right="50.0" top="10.0" />
+         </VBox.margin>
+         <Label prefHeight="16.0" prefWidth="166.0" text="Database Connection" />
+         <Circle fx:id="databaseLight" fill="#b20404" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      </HBox>
+   </VBox>
+</Pane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mr.abschlussprojekt.bikeRental.gui.UserActivityController">
+   <children>
+      <Text layoutX="365.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity" />
+      <TableView fx:id="rentBikesTable" layoutX="6.0" layoutY="149.0" prefHeight="637.0" prefWidth="988.0" style="-fx-border-color: #003366;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <columns>
+            <TableColumn fx:id="rentIdColumn" prefWidth="62.0" text="Rent ID" />
+            <TableColumn fx:id="bikeModelColumn" prefWidth="120.0" text="Bicycle Model" />
+            <TableColumn fx:id="pickupLocationColumn" prefWidth="256.0" text="Pickup Location" />
+            <TableColumn fx:id="pickupDateColumn" prefWidth="137.0" text="Pickup Date" />
+            <TableColumn fx:id="returnDateColumn" minWidth="0.0" prefWidth="144.0" text="Return Date" />
+            <TableColumn fx:id="totalPriceColumn" prefWidth="134.0" text="Total Price" />
+            <TableColumn fx:id="actionColumn" prefWidth="126.0" text="Action" />
+         </columns>
+      </TableView>
+      <Text layoutX="414.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mr.abschlussprojekt.bikeRental.gui.AdminUsersTabController">
+   <HBox layoutX="10.0" layoutY="10.0" prefHeight="691.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="282.0" spacing="15.0" style="-fx-background-color: #e5e5e5;">
+         <opaqueInsets>
+            <Insets left="40.0" right="40.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin>
+         <ImageView fitHeight="92.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets top="20.0" />
+            </VBox.margin>
+            <Image url="@styles/user-avatar.png" />
+         </ImageView>
+         <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="175.0" spacing="3.0">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+               <Insets left="20.0" right="20.0" top="10.0" />
+            </VBox.margin>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome " wrappingWidth="68.3095703125" />
+            <Label fx:id="welcomeLabel">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </HBox>
+         <Label fx:id="tipText" prefHeight="77.0" prefWidth="196.0" textFill="#179428">
+            <VBox.margin>
+               <Insets bottom="10.0" />
+            </VBox.margin></Label>
+         <TextField fx:id="userNameField" onKeyReleased="#userNameValidation" prefHeight="49.0" prefWidth="196.0" promptText="User Name" styleClass="field-box" stylesheets="@styles/style.css" />
+         <TextField fx:id="userPhoneField" onKeyReleased="#phoneValidation" prefHeight="50.0" prefWidth="280.0" promptText="Phone" styleClass="field-box" stylesheets="@styles/style.css" />
+         <TextField fx:id="userEmailField" onKeyReleased="#emailValidation" prefHeight="50.0" prefWidth="280.0" promptText="E-Mail" styleClass="field-box" stylesheets="@styles/style.css" />
+         <TextField fx:id="userPasswordField" onKeyReleased="#PasswordValidation" prefHeight="50.0" prefWidth="196.0" promptText="Password" styleClass="field-box" stylesheets="@styles/style.css" />
+         <Label fx:id="errorValidationLabel" prefHeight="60.0" prefWidth="196.0" textFill="#bc1e1e" wrapText="true">
+            <font>
+               <Font size="12.0" />
+            </font></Label>
+         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="280.0" spacing="15.0">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addUserButtonHandler" prefHeight="50.0" prefWidth="110.0" styleClass="login-form-button" stylesheets="@styles/style.css" text="Add">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelBtnHandler" prefHeight="50.0" prefWidth="104.0" styleClass="login-form-button" stylesheets="@styles/style.css" text="Cancel">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </HBox>
+         <Button mnemonicParsing="false" onAction="#loadUsersFromDbHandler" prefHeight="50.0" prefWidth="198.0" styleClass="login-form-button" stylesheets="@styles/style.css" text="Show Users">
+            <VBox.margin>
+               <Insets bottom="20.0" top="15.0" />
+            </VBox.margin>
+            <cursor>
+               <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+         </Button>
+         <HBox alignment="CENTER" prefHeight="52.0" prefWidth="198.0" spacing="30.0">
+            <VBox.margin>
+               <Insets bottom="20.0" />
+            </VBox.margin>
+            <Label text="Database Status" />
+            <Circle fx:id="dbStatusLight" fill="#ff1f1f" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+         </HBox>
+      </VBox>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="657.0" prefWidth="899.0">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <Label text="User Management">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="30.0" />
+            </VBox.margin>
+         </Label>
+         <TableView fx:id="usersTable" prefHeight="580.0" prefWidth="899.0" style="-fx-border-color: #003366;">
+            <columns>
+               <TableColumn fx:id="userIdColumn" prefWidth="75.0" text="User ID" />
+               <TableColumn fx:id="userNameColumn" prefWidth="134.0" text="Name" />
+               <TableColumn fx:id="userPhoneColumn" prefWidth="182.0" text="Phone Number" />
+               <TableColumn fx:id="userEmailColumn" prefWidth="242.0" text="E-Mail" />
+               <TableColumn fx:id="userPasswordColumn" prefWidth="165.0" text="Password" />
+               <TableColumn fx:id="actionColumn" prefWidth="109.0" text="Actions" />
+            </columns>
+         </TableView>
+      </VBox>
+   </HBox>
+</AnchorPane>

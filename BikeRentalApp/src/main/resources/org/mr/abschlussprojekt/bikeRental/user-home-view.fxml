@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mr.abschlussprojekt.bikeRental.gui.UserHomeController">
+   <children>
+      <HBox alignment="CENTER" layoutX="646.0" layoutY="80.0" prefHeight="37.0" prefWidth="333.0" spacing="7.0" styleClass="search-hbox" stylesheets="@styles/style.css">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@styles/searchIcon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextField fx:id="searchField" onAction="#handleSearch" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="315.0" promptText="Search bikes by model, type, or location..." styleClass="search-field" stylesheets="@styles/style.css">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Label fx:id="searchLabelMsg" layoutX="659.0" layoutY="122.0" prefHeight="16.0" prefWidth="297.0" textFill="#da0e0e" />
+      <Text layoutX="159.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Your Rental Dashboard">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <TableView fx:id="bikesTable" prefHeight="637.0" prefWidth="988.0" style="-fx-border-color: #003366;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <columns>
+            <TableColumn fx:id="bikeIdColumn" editable="false" prefWidth="56.0" resizable="false" text="ID" />
+            <TableColumn fx:id="bikeModelColumn" editable="false" prefWidth="138.0" text="Bicycle Model" />
+            <TableColumn fx:id="bikeTypeColumn" editable="false" prefWidth="93.0" text=" Type" />
+            <TableColumn fx:id="bikePriceColumn" editable="false" prefWidth="129.0" text="Price Per day" />
+            <TableColumn fx:id="bikeStatusColumn" editable="false" prefWidth="106.0" text="Availability" />
+            <TableColumn fx:id="bikeLocationColumn" editable="false" minWidth="0.0" prefWidth="361.0" text="Location" />
+            <TableColumn fx:id="actionColumn" editable="false" prefWidth="104.0" text="Action" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" layoutX="159.0" layoutY="46.0" prefHeight="42.0" prefWidth="341.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hello ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="userNameLabel" prefHeight="27.0" prefWidth="220.0" textFill="#003366">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="646.0" layoutY="59.0" text="Search:" />
+   </children>
+</AnchorPane>
